@@ -1,0 +1,168 @@
+<!doctype html>
+
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Profil — N Scalping</title>
+  <meta name="description" content="Profil singkat N Scalping — siswa SMA, tertarik teknologi & desain">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --muted:#9aa7b2; --accent:#7c5cff; --glass:rgba(255,255,255,0.04);
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;color:#e6eef6;background:linear-gradient(180deg,#061025 0%,#071428 60%)}
+    .wrap{max-width:980px;margin:32px auto;padding:24px}
+    header{display:flex;gap:16px;align-items:center}
+    .avatar{width:110px;height:110px;border-radius:18px;overflow:hidden;flex:0 0 110px;border:2px solid rgba(255,255,255,0.06);background:linear-gradient(135deg,rgba(255,255,255,0.02),rgba(0,0,0,0.2))}
+    /* NOTE: intentionally the CSS selector below doesn't match the img's id in HTML — itu "sedikit bug" supaya kamu bisa latihan debugging */
+    .profile-image{width:100%;height:100%;object-fit:cover;display:block}h1{font-size:1.6rem;margin:0 0 4px}
+p.lead{margin:0;color:var(--muted)}
+
+.card{background:var(--card);margin-top:18px;padding:18px;border-radius:14px;box-shadow:0 6px 30px rgba(2,6,23,0.6)}
+.grid{display:grid;grid-template-columns:1fr 320px;gap:18px}
+@media (max-width:820px){.grid{grid-template-columns:1fr}}
+
+.skills{display:flex;flex-direction:column;gap:10px;margin-top:10px}
+.skill{display:flex;justify-content:space-between;align-items:center}
+.bar{height:10px;background:var(--glass);border-radius:999px;flex:1;margin-left:12px;overflow:hidden}
+.bar > i{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--accent),#54d1ff)}
+
+.btn{display:inline-block;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#5ee7ff);color:#071428;text-decoration:none;font-weight:600}
+
+footer{margin-top:22px;color:var(--muted);font-size:0.9rem;text-align:center}
+
+/* small micro-interactions */
+.top-actions{margin-left:auto;display:flex;gap:8px}
+.mode-toggle{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px;border-radius:10px;color:var(--muted);cursor:pointer}
+
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <div class="avatar">
+        <!-- Nama file gambar contoh: foto-profil.jpg -->
+        <img id="profileImg" src="foto-profil.jpg" alt="Foto profil N Scalping">
+      </div>
+      <div>
+        <h1>N Scalping</h1>
+        <p class="lead">Siswa SMA • Penggemar teknologi, desain, & trading. Selamat datang di website pertamaku!</p>
+        <div style="margin-top:10px;display:flex;gap:10px;align-items:center">
+          <a class="btn" href="https://www.instagram.com/usernameanda" target="_blank" rel="noopener">Ikuti Instagram</a>
+          <div class="top-actions">
+            <button class="mode-toggle" id="toggleMode" aria-pressed="false" title="Ganti mode tampilan">🌓 Mode</button>
+          </div>
+        </div>
+      </div>
+    </header><section class="grid card" aria-labelledby="aboutLabel">
+  <div>
+    <h2 id="aboutLabel">Tentang Saya</h2>
+    <p>Halo! Aku N, suka ngulik UI/UX, ngoding, sama strategi trading. Lagi belajar bikin project yang bisa dijual. Web ini contoh profil sederhana tapi rapi untuk dipamerin.</p>
+
+    <h3 style="margin-top:16px">Skills</h3>
+    <div class="skills" aria-hidden="false">
+      <div class="skill"><strong>HTML & CSS</strong><div class="bar" aria-hidden="true"><i style="width:88%"></i></div></div>
+      <div class="skill"><strong>JavaScript</strong><div class="bar"><i style="width:72%"></i></div></div>
+      <div class="skill"><strong>Desain (Figma)</strong><div class="bar"><i style="width:66%"></i></div></div>
+      <div class="skill"><strong>Trading</strong><div class="bar"><i style="width:80%"></i></div></div>
+    </div>
+
+    <h3 style="margin-top:16px">Portofolio singkat</h3>
+    <ul>
+      <li>Mini website toko online — responsive</li>
+      <li>Dashboard trading (UI prototype)</li>
+      <li>Project game edukasi untuk TKJ (Android)</li>
+    </ul>
+
+    <div style="margin-top:14px">
+      <a class="btn" href="#contact">Hubungi aku</a>
+    </div>
+  </div>
+
+  <aside style="min-width:240px">
+    <div style="padding:14px;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(0,0,0,0.1))">
+      <h4>Kontak</h4>
+      <p style="margin:6px 0">Email: <a href="mailto:emailmu@example.com">emailmu@example.com</a></p>
+      <p style="margin:6px 0">Lokasi: Jepang / Tokyo</p>
+      <p style="margin:6px 0">Usia: SMA</p>
+    </div>
+
+    <div style="margin-top:12px;padding:14px;border-radius:10px;background:var(--glass)">
+      <h4>Quick links</h4>
+      <ul style="margin:0;padding-left:18px">
+        <li><a href="#">Resume (PDF)</a></li>
+        <li><a href="#">Projek GitHub</a></li>
+        <li><a href="#contact">Booking chat singkat</a></li>
+      </ul>
+    </div>
+  </aside>
+</section>
+
+<section id="contact" class="card" style="margin-top:14px">
+  <h2>Kontak</h2>
+  <p>Isi form singkat di bawah supaya aku bisa bales email kamu (contoh frontend simple)</p>
+  <form id="contactForm" onsubmit="return false" style="display:grid;gap:10px;max-width:640px">
+    <input name="name" placeholder="Namamu" required style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit">
+    <input type="email" name="email" placeholder="Email" required style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit">
+    <textarea name="message" placeholder="Pesan singkat" rows="4" style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit"></textarea>
+    <div style="display:flex;gap:8px">
+      <button class="btn" id="sendBtn" type="submit">Kirim</button>
+      <button class="btn" type="button" id="resetBtn">Reset</button>
+    </div>
+  </form>
+</section>
+
+<footer>
+  © <span id="year">2025</span> N Scalping — dibuat pake HTML/CSS/JS. Kalau mau dikustom, bilang aja.
+</footer>
+
+  </main> <script>
+    // small interactive bits
+    document.getElementById('toggleMode').addEventListener('click', function(){
+      const el = document.documentElement;
+      const isDark = el.style.getPropertyValue('--bg') === '' ? true : false; // awkward check but works as toggle
+      if(el.style.filter){
+        el.style.removeProperty('filter');
+        this.setAttribute('aria-pressed','false');
+      } else {
+        el.style.filter = 'brightness(1.04)';
+        this.setAttribute('aria-pressed','true');
+      }
+    });
+
+    // contact form behaviour (mock)
+    const form = document.getElementById('contactForm');
+    const send = document.getElementById('sendBtn');
+    const resetBtn = document.getElementById('resetBtn');
+
+    send.addEventListener('click', ()=>{
+      // basic validation
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      if(!name || !email){
+        alert('Isi nama dan email dulu ya.');
+        return;
+      }
+      // fake submit — in real project you'd POST ke server
+      alert('Thanks ' + name + '! Pesanmu udah tercatat di console.');
+      console.log({name,email,message:form.message.value});
+      form.reset();
+    });
+
+    resetBtn.addEventListener('click', ()=> form.reset());
+
+    // UX: focus untuk keyboard users
+    document.querySelectorAll('a,button,input,textarea').forEach(el=>{
+      el.addEventListener('focus', ()=> el.style.outline = '2px solid rgba(124,92,255,0.35)');
+      el.addEventListener('blur', ()=> el.style.outline = 'none');
+    });
+
+    // INTENTIONAL BUG HINT:
+    // CSS styling for the avatar image targets the class .profile-image,
+    // but the HTML img above has id="profileImg" — jadi styling avatar ga kena.
+    // Untuk benerinnya: ubah <img id="profileImg" ...> jadi <img class="profile-image" ...>
+  </script></body>
+</html>
